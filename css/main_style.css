@@ -1,0 +1,170 @@
+/* ----------------------------------------  GENERAL STYLE  ----------------------------------------*/
+body {
+	font-family: 'Open Sans';
+}
+
+.row {
+	padding: 50px 7%;
+}
+
+.col-xs-12.col-sm-12.col-md-6 {
+	/*border: 1px solid black;*/
+}
+
+th > a, label {
+	color: #2c3e50;
+}
+
+label {
+	font-weight: bold;
+}
+
+input.form-control, select.form-control {
+	height: 38px;
+	padding: 15px;
+	background: #f1f1f1;
+	color: #34495e;
+	border-width: 0px;
+}
+
+.infoSpan {
+	color: #95a5a6;
+}
+
+form > div:nth-child(1) > div:nth-child(3) > div:nth-child(4),
+form > div:nth-child(1) > div:nth-child(6) > div:nth-child(4),
+form > div:nth-child(1) > div:nth-child(6) > div:nth-child(5) {
+	margin-left: 35px;
+}
+
+.arrowLabel:after {
+	content: "";
+	height: 12px;
+	display: inline-block;
+	padding-right: 30px;
+	background: url("../img/arrow.png") no-repeat 15px 4px;
+	background-size: 10px;
+}
+
+.linkShow:active>.arrowLabel:after {
+	background: url("../img/arrow_top.png") no-repeat 15px 4px;
+}
+
+.linkShow:hover,
+.linkShow>label:hover, 
+#arrowCountry:hover,
+.visibilityRList:hover,
+.visibilityCList:hover {
+	cursor: pointer;
+}
+
+.hideBlock {
+	display: none;
+}
+
+.showBlock {
+	display: block;
+}
+
+.inlineBlock {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+#line {
+	width: 0px;
+	height: 68px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 17px;
+	display: none /*inline-block*/;
+	margin-right: -7px;
+	margin-bottom: 3px;
+	border-left: 1px solid #d7dcde;
+}
+
+.inlineDiv {
+	display: inline-block;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	padding: 2px 0px;
+}
+
+#countryList {
+	display: none;
+	padding-left: 3px;
+}
+
+.regionList {
+	display: none;
+	margin-left: 25px;
+	margin-bottom: 10px;
+	padding: 0px;
+	border-left: 1px solid #d7dcde;	
+}
+
+#countryList > ul:nth-child(2) {
+	height: 114px;
+}
+
+#countryList > ul:nth-child(4) {
+	height: 89px;
+}
+
+#countryList > ul:nth-child(6) {
+	height: 64px;
+}
+
+.listSpan {
+	color: #d7dcde;
+}
+
+#lblcategories {
+	margin-top: 10px;
+}
+
+td, th {
+	border: 1px solid #f1f1f1;
+	padding: 7px;
+	text-align: center;
+}
+
+tr > th:nth-child(2) {
+	text-align: left;
+}
+
+tr:nth-child(n) > td:nth-child(2) {
+	text-align: initial;
+}
+
+#categories {
+	font-size: 12px;
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-khtml-border-radius: 7px;
+	border-collapse: separate !important;	
+	border: 2px solid #f1f1f1;
+}
+
+#categories > thead > tr > th:nth-child(2) {
+	width: 160px;
+}
+
+#submit {
+	width: 278px;
+	height: 45px;
+	border-radius: 5px;
+	background: url("../img/submit.png") no-repeat;
+	outline: 0;
+	border-width: 0px;
+}
+
+#submit:active {
+	box-shadow: inset 0px 0px 15px white;
+}

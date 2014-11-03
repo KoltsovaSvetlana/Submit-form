@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title>Add-campaning-form</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/lib/bootstrap.min.css">
+        <link rel="stylesheet" href="css/lib/bootstrap-select.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,400&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/lib/flat.css">
+        <link rel="stylesheet" href="css/lib/orange.css">
+		<link rel="stylesheet" href="css/main_style.css">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <form role="form" name="form" id="form">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <label for="nameCamp">Введите название кампании:</label>
+                            <input type="text" class="form-control" maxlength="30" name="nameCamp" id="nameCamp" placeholder="название кампании"/>
+                            <span class="infoSpan">Осталось символов: </span><span id="countSymbols" class="infoSpan">30</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="urlCamp">Введите адрес рекламируемого сайта:</label>
+                            <input type="url" class="form-control" name="urlCamp" id="urlCamp" placeholder="адрес сайта"/>
+                        </div><!-- end general information block -->
+                        <div class="form-group">
+                            <label for="contentAdult1">Планируете ли Вы использовать контент “для  взрослых”?</label></br>
+                            <input type="radio" name="contentAdult" id="contentAdult1" value="yes" checked />  Да
+                            <input type="radio" name="contentAdult" id="contentAdult2" value="no" />  Нет
+                        </div><!-- end adult content block -->
+                        <div class="form-group linkShow" >
+                            <label class="arrowLabel">География</label> </br>
+                            <span class="infoSpan">Выбор страны и города для показа объявления</span>
+                        </div>
+                        <div class="form-group hideBlock">
+                            <div id="line"></div>
+                            <div class="inlineDiv">
+                                <img id="arrowCountry" class="visibilityCList" src="img/arrow_right.png"/>&ensp;<input type="checkbox" id="all" class="geography" value="allCountries"/><span class="visibilityCList"> Все страны</span>
+                                <ul id="countryList">
+                                    <li>
+                                        <span class="listSpan">&mdash;&ensp;</span>
+                                        <img class="visibilityRList ua" src="img/arrow_right.png"/>&ensp;
+                                        <input type="checkbox" class="all geography" id="ukraine" />
+                                        <span class="visibilityRList ua"> Украина</span>
+                                    </li>
+                                    <ul class="regionList"> 
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Kiev" class="ukraine geography" id="Kiev" /> Киевская обл.</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Lviv" class="ukraine geography" id="Lviv" /> Львовская обл.</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Donetsk" class="ukraine geography" id="Donetsk" /> Донецкая обл.</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Nikolaev" class="ukraine geography" id="Nikolaev" /> Николаевская обл.</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Crimea"  class="ukraine geography" id="Crimea" /> Крым</li>
+                                    </ul>
+                                    <li>
+                                        <span class="listSpan">&mdash;&ensp;</span>
+                                        <img class="visibilityRList ru" src="img/arrow_right.png"/>&ensp;
+                                        <input type="checkbox" class="all geography" id="russian" />
+                                        <span class="visibilityRList ru"> Россия</span>
+                                    </li>
+                                    <ul class="regionList">
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Moscow" class="russian geography" id="Moscow" /> Московская обл.</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Krasnodar" class="russian geography" id="Krasnodar" /> Краснодарский край</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Kamchatka" class="russian geography" id="Kamchatka" /> Камчатка</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Leningrad" class="russian geography" id="Leningrad" /> Ленинградская обл.</li>
+                                    </ul>
+                                    <li>
+                                        <span class="listSpan">&mdash;&ensp;</span>
+                                        <img class="visibilityRList bl" src="img/arrow_right.png"/>&ensp;
+                                        <input type="checkbox" class="all geography" id="belarus" />
+                                        <span class="visibilityRList bl"> Беларусь</span>
+                                    </li>
+                                    <ul class="regionList">
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Minsk" class="belarus geography" id="Minsk" /> Минск</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Gomel" class="belarus geography" id="Gomel" /> Гомель</li>
+                                        <li><span class="listSpan">&mdash;&emsp;</span><input type="checkbox" name="Brest" class="belarus geography" id="Brest" /> Брест</li>
+                                    </ul> 
+                                </ul>
+                            </div>        
+                        </div><!-- end geography block  -->
+                        <div class="form-group linkShow" >
+                            <label class="arrowLabel">Демография</label> </br>
+                            <span class="infoSpan">Выбор пола, возраста</span>                             
+                        </div>
+                        <div class="form-group hideBlock showBlock"> 
+                            <label for="sex">Выберите пол:</label> </br>
+                            <div class="inlineBlock">
+                                <input type="radio" name="sex" id="all" value="all" checked />  Любой
+                            </div>
+                            <div class="inlineBlock">
+                                <input type="radio" name="sex" id="man" value="man" />  Мужской
+                            </div>
+                            <div class="inlineBlock">
+                                <input type="radio" name="sex" id="woman" value="woman" />  Женский  
+                            </div>
+                        </div><!-- end demography block -->
+                        <div class="form-group linkShow" >
+                            <label class="arrowLabel">Дополнительные настройки</label> </br>
+                            <span class="infoSpan">Временной таргетинг, черные и белые списки</span>
+                        </div>
+                        <div class="form-group hideBlock"> 
+                            <label for="targeting">Выберите категории:</label> </br>
+                            <div class="inlineBlock">
+                                <input type="checkbox" name="targeting" id="timeTargeting" value="timeTargeting" checked />  Временной таргетинг
+                            </div>
+                            <div class="inlineBlock">
+                                <input type="checkbox" name="targeting1" id="blackList" value="blackList" />  Черные списки
+                            </div>
+                            <div class="inlineBlock">
+                                <input type="checkbox" name="targeting2" id="whiteList" value="whiteList" />  Белые списки
+                            </div> 
+                        </div><!-- end additional settings block -->
+                        <div class="form-group linkShow" >
+                            <label class="arrowLabel">Планирование бюджета кампании</label> </br>
+                            <span class="infoSpan">Настройка лимитов кампании</span>
+                        </div>
+                        <div class="hideBlock showBlock">
+                            <div class="form-group">
+                                <label for="totalBudget">Установите суммарный бюджет рекламной кампании:</label>
+                                <input type="text" class="form-control" name="totalBudget" id="totalBudget" value="10000 руб."/>
+                            </div>
+                            <div class="form-group">
+                                <label for="dayBudget">Установите дневной бюджет рекламной кампании:</label>
+                                <input type="text" class="form-control" name="dayBudget" id="dayBudget" value="1000 руб."/>
+                            </div>
+                        </div><!-- end budget planning block -->
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="form-group">
+                            <label for="theme">Выберите тематику Вашей рекламной кампании:</label>
+                            <select class="form-control selectpicker" maxlength="30" name="theme" id="theme">
+                                <option value="comp_game">Компьютерные игры</option>
+                                <option value="comp_program">Компьютерные программы</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label id="lblcategories" for="categories">Выберите категории сайтов для показа Ваших обьявлений:</label>
+                            <table id="categories">
+                                <thead>
+                                    <th><input type="checkbox" id="table" /></th>
+                                    <th>Категория</th>
+                                    <th><a href="#">Минимальная. Цена</a></th>
+                                    <th><a href="#">Рекомендов. Цена</a></th>
+                                    <th><a href="#">Установлен. Цена</a></th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><input type="checkbox" name="auto" id="auto" class="table" /></td>
+                                        <td>Авто/Мото</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="business" id="business" class="table" /></td>
+                                        <td>Бизнес и Финансы</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="house" id="house" class="table" /></td>
+                                        <td>Дом и быт</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="health" id="health" class="table" /></td>
+                                        <td>Красота и здоровье</td>
+                                        <td>1.89 руб.</td>
+                                        <td>1.89 руб.</td>
+                                        <td>1.89 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="culture" id="culture" class="table" /></td>
+                                        <td>Культура и искуство</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="fashion" id="fashion" class="table" /></td>
+                                        <td>Мода и Стиль</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="realty" id="realty" class="table" /></td>
+                                        <td>Недвижимость</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="news" id="news" class="table" /></td>
+                                        <td>Новости и СМИ</td>
+                                        <td>1.89 руб.</td>
+                                        <td>1.89 руб.</td>
+                                        <td>1.89 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="education" id="education" class="table" /></td>
+                                        <td>Образование и работа</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="policy" id="policy" class="table" /></td>
+                                        <td>Политика</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="dating" id="dating" class="table" /></td>
+                                        <td>Знакомства</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="leisure" id="leisure" class="table" /></td>
+                                        <td>Развлечения и досуг</td>
+                                        <td>1.89 руб.</td>
+                                        <td>1.89 руб.</td>
+                                        <td>1.89 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="sport" id="sport" class="table" /></td>
+                                        <td>Спорт</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="technique" id="technique" class="table" /></td>
+                                        <td>Техника и аксессуары</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="travel" id="travel" class="table" /></td>
+                                        <td>Туризм и путешествия</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="chanceGame" id="chanceGame" class="table" /></td>
+                                        <td>Азартные игры</td>
+                                        <td>1.89 руб.</td>
+                                        <td>1.89 руб.</td>
+                                        <td>1.89 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="game" id="game" class="table" /></td>
+                                        <td>Игры</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="others" id="others" class="table" /></td>
+                                        <td>Прочее</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                        <td>1.50 руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox" name="adult" id="adult" class="table" /></td>
+                                        <td>Для взрослых</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                        <td>0.50 руб.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+					<div class="col-xs-12 col-sm-12 col-md-12">
+                        <input id="submit" type="submit" value="" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Javascripts -->
+        <script src="js/lib/jquery-1.9.1.min.js"></script>
+        <script src="js/lib/bootstrap.min.js"></script>
+        <script src="js/lib/bootstrap-select.min.js"></script>
+        <script src="js/lib/icheck.min.js"></script>
+        <script>
+            //init plugins and handlers
+            $(document).ready(function () {
+                $(".selectpicker").selectpicker();
+                $("input").iCheck({
+                    checkboxClass: "icheckbox_flat-orange",
+                    radioClass: "iradio_flat"
+                });
+
+                $("#all").on("ifChecked", geographyChecked);
+                $("#all").on("ifUnchecked", geographyUnChecked);
+                $(".geography").each(function(index){
+                    $(this).on("ifChecked", geographyCheck);
+                    $(this).on("ifUnchecked", geographyUnCheck);
+                });
+
+				$("#table").on("ifChecked", tableChecked);
+                $("#table").on("ifUnchecked", tableUnChecked);
+                $(".table").each(function(index){
+                    $(this).on("ifChecked", tableCheck);
+                    $(this).on("ifUnchecked", tableUnCheck);
+                });
+
+            });
+        </script>
+        <script src="js/main_script.js"></script>
+    </body>
+</html>
